@@ -1,2 +1,5 @@
-# mac hidden files
+# Mac hidden files
 .DS_Store
+
+# Dependency directories
+node_modules/

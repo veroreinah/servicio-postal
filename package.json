@@ -1,0 +1,14 @@
+{
+  "name": "servicio-postal",
+  "version": "1.0.0",
+  "description": "Servicio postal by Desmusea meets Raymond Queneau's Cent mille milliards de poèmes",
+  "main": "scripts/generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^24.0.0"
+  }
+}
