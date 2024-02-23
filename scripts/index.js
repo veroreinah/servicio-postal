@@ -52,7 +52,7 @@ const shuffleArray = (arr) =>
     .map((a) => a[1]);
 
 (async function getData() {
-  fetch("/data/postales.json")
+  fetch("data/postales.json")
     .then((response) => response.json())
     .then((result) => {
       if (Array.isArray(result)) {
