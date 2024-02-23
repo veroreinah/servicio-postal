@@ -5,23 +5,267 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cien mil millardos de Servicio postal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Satisfy&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --width-turned: 14vw;
+      --margin-turned: -14vw;
+      --gradient: linear-gradient(90deg, rgba(205, 205, 205, 1) 0%, rgba(245, 245, 245, 1) 5%, rgba(245, 245, 245, 1) 100%);
+      --gradient-turned: linear-gradient(90deg, rgba(245, 245, 245, 1) 0%, rgba(245, 245, 245, 1) 95%, rgba(205, 205, 205, 1) 100%);
+      --dark: #14101b;
+      --light: #e7e6e9;
+    }
+
+    body {
+      margin: 0;
+      padding: 16px;
+      background: var(--dark);
+      color: var(--light);
+      font-family: "Lato", sans-serif;
+    }
+
+    a {
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    a>span {
+      padding-left: 8px;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: "Satisfy", cursive;
+    }
+
+    main {
+      background: #f5f5f5;
+      color: var(--dark);
+      position: relative;
+    }
+
+    main article {
+      padding-block: 8px;
+    }
+
+    main>article {
+      position: absolute;
+      top: 0;
+      left: 15vw;
+      right: 0;
+    }
+
+    main>article:last-child {
+      border-left: 1px solid var(--dark);
+    }
+
+    main article>p {
+      width: 90%;
+      height: 20px;
+      line-height: 20px;
+      margin-block: 8px;
+      padding-block: 8px;
+      padding-left: 16px;
+      border: 1px solid transparent;
+      font-size: 14px;
+    }
+
+    main>article>p {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #f5f5f5;
+      background: var(--gradient);
+      border: 1px solid var(--dark);
+      border-left: none;
+    }
+
+    main>article>p.turned {
+      animation: turnPage 1s forwards;
+    }
+
+    main>article>p.unturned {
+      animation: unturnPage 1s forwards;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 15vw 1fr;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (min-width: 600px) {
+      :root {
+        --width-turned: 28vw;
+        --margin-turned: -28vw;
+      }
+
+      main>article {
+        left: 30vw;
+      }
+
+      main article>p {
+        font-size: 16px;
+      }
+
+      .wrapper {
+        grid-template-columns: 30vw 1fr;
+      }
+    }
+
+    @keyframes turnPage {
+      0% {
+        margin-left: 0;
+        width: 90%;
+        text-indent: 0;
+        padding-left: 16px;
+        border-left: none;
+        background: var(--gradient);
+      }
+
+      50% {
+        margin-left: 0;
+        width: 10%;
+        text-indent: 0;
+        padding-left: 16px;
+        border-left: none;
+        background: var(--gradient);
+      }
+
+      75% {
+        margin-left: var(--margin-turned);
+        width: var(--width-turned);
+        border-right: none;
+        text-indent: -9999px;
+        padding-left: 0;
+        border-left: 1px solid var(--dark);
+        background: var(--gradient-turned);
+      }
+
+      100% {
+        margin-left: var(--margin-turned);
+        width: var(--width-turned);
+        border-right: none;
+        text-indent: -9999px;
+        padding-left: 0;
+        border-left: 1px solid var(--dark);
+        background: var(--gradient-turned);
+      }
+    }
+
+    @keyframes unturnPage {
+      0% {
+        margin-left: -14vw;
+        width: 14vw;
+        border-right: none;
+        text-indent: -9999px;
+        padding-left: 0;
+        border-left: 1px solid var(--dark);
+        background: var(--gradient-turned);
+      }
+
+      50% {
+        margin-left: 0;
+        width: 10%;
+        border-right: none;
+        text-indent: -9999px;
+        padding-left: 16px;
+        border-left: none;
+        background: var(--gradient);
+      }
+
+      55% {
+        margin-left: 0;
+        width: 10%;
+        text-indent: 0;
+        padding-left: 16px;
+        border-left: none;
+        background: var(--gradient);
+      }
+
+      100% {
+        margin-left: 0;
+        width: 90%;
+        text-indent: 0;
+        padding-left: 16px;
+        border-left: none;
+        background: var(--gradient);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <main></main>
+  <header>
+    <h1>Cien mil millardos de Servicio postal</h1>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <article id="prev-pages">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="empty">&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="empty">&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="empty">&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </article>
+      <article id="next-pages">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="empty">&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="empty">&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p class="empty">&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </article>
+    </div>
+  </main>
 
   <footer>
+    <p>✸</p>
     <a href="https://www.desmusea.com/" target="_blank" rel="noopener noreferrer">
-      ☁️ desmusea.com
+      ☁️ <span>desmusea.com</span>
     </a>
     <a href="https://vitrin.as/" target="_blank" rel="noopener noreferrer">
-      ◼️ vitrin.as
+      ◼️ <span>vitrin.as</span>
     </a>
     <a href="https://www.instagram.com/desmusea" target="_blank" rel="noopener noreferrer">
-      ✨ instagram.com/desmusea
+      ✨ <span>instagram.com/desmusea</span>
     </a>
     <a href="https://substack.com/profile/194705132-desmusea" target="_blank" rel="noopener noreferrer">
-      📬 Servicio postal
+      📬 <span>Servicio postal</span>
     </a>
   </footer>
 
