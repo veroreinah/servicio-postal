@@ -25,7 +25,6 @@ const POSTALES = [
     const doc = new jsdom.JSDOM(html).window.document;
 
     const paragraphs = doc.querySelectorAll(".body > p");
-    const limit = paragraphs.length < 6 ? paragraphs.length : 6;
 
     for (let index = 0; index < paragraphs.length; index++) {
       if (
@@ -65,6 +64,15 @@ const POSTALES = [
 
   fs.writeFileSync(
     `${DIR}/postales.json`,
-    JSON.stringify([...new Set(verses)])
+    JSON.stringify(
+      [...new Set(verses)].map((verse) => {
+        if (verse.length > 30) {
+          const end = verse.indexOf(" ", 30);
+          return verse.substring(0, end === -1 ? 30 : end);
+        }
+
+        return verse;
+      })
+    )
   );
 })();
